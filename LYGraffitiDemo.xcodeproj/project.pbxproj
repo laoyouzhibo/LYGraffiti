@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,22 @@
 		77FC6F332435A33E004B858F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F312435A33E004B858F /* Main.storyboard */; };
 		77FC6F352435A33F004B858F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F342435A33F004B858F /* Assets.xcassets */; };
 		77FC6F382435A33F004B858F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F362435A33F004B858F /* LaunchScreen.storyboard */; };
+		77FC6F4E2435A358004B858F /* ios.xcarchive in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F442435A358004B858F /* ios.xcarchive */; };
+		77FC6F4F2435A358004B858F /* LYGraffiti.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77FC6F452435A358004B858F /* LYGraffiti.xcframework */; };
+		77FC6F502435A358004B858F /* ios_sim.xcarchive in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F462435A358004B858F /* ios_sim.xcarchive */; };
+		77FC6F512435A358004B858F /* DrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6F482435A358004B858F /* DrawingBoard.swift */; };
+		77FC6F522435A358004B858F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F492435A358004B858F /* Info.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77FC6F4C2435A358004B858F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77FC6F402435A358004B858F /* LYGraffiti.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 77FC6EC9243594CB004B858F;
+			remoteInfo = LYGraffiti;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		77FC6F282435A33E004B858F /* LYGraffitiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYGraffitiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +39,13 @@
 		77FC6F342435A33F004B858F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77FC6F372435A33F004B858F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77FC6F392435A33F004B858F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77FC6F402435A358004B858F /* LYGraffiti.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = LYGraffiti.xcodeproj; sourceTree = "<group>"; };
+		77FC6F442435A358004B858F /* ios.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ios.xcarchive; sourceTree = "<group>"; };
+		77FC6F452435A358004B858F /* LYGraffiti.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LYGraffiti.xcframework; sourceTree = "<group>"; };
+		77FC6F462435A358004B858F /* ios_sim.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ios_sim.xcarchive; sourceTree = "<group>"; };
+		77FC6F482435A358004B858F /* DrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingBoard.swift; sourceTree = "<group>"; };
+		77FC6F492435A358004B858F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77FC6F4A2435A358004B858F /* LYGraffiti.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYGraffiti.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77FC6F4F2435A358004B858F /* LYGraffiti.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +79,7 @@
 		77FC6F2A2435A33E004B858F /* LYGraffitiDemo */ = {
 			isa = PBXGroup;
 			children = (
+				77FC6F3F2435A358004B858F /* LYGraffiti */,
 				77FC6F2B2435A33E004B858F /* AppDelegate.swift */,
 				77FC6F2D2435A33E004B858F /* SceneDelegate.swift */,
 				77FC6F2F2435A33E004B858F /* ViewController.swift */,
@@ -65,6 +89,44 @@
 				77FC6F392435A33F004B858F /* Info.plist */,
 			);
 			path = LYGraffitiDemo;
+			sourceTree = "<group>";
+		};
+		77FC6F3F2435A358004B858F /* LYGraffiti */ = {
+			isa = PBXGroup;
+			children = (
+				77FC6F402435A358004B858F /* LYGraffiti.xcodeproj */,
+				77FC6F432435A358004B858F /* build */,
+				77FC6F472435A358004B858F /* LYGraffiti */,
+			);
+			path = LYGraffiti;
+			sourceTree = "<group>";
+		};
+		77FC6F412435A358004B858F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77FC6F4D2435A358004B858F /* LYGraffiti.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77FC6F432435A358004B858F /* build */ = {
+			isa = PBXGroup;
+			children = (
+				77FC6F442435A358004B858F /* ios.xcarchive */,
+				77FC6F452435A358004B858F /* LYGraffiti.xcframework */,
+				77FC6F462435A358004B858F /* ios_sim.xcarchive */,
+			);
+			path = build;
+			sourceTree = "<group>";
+		};
+		77FC6F472435A358004B858F /* LYGraffiti */ = {
+			isa = PBXGroup;
+			children = (
+				77FC6F482435A358004B858F /* DrawingBoard.swift */,
+				77FC6F492435A358004B858F /* Info.plist */,
+				77FC6F4A2435A358004B858F /* LYGraffiti.h */,
+			);
+			path = LYGraffiti;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,12 +175,28 @@
 			mainGroup = 77FC6F1F2435A33E004B858F;
 			productRefGroup = 77FC6F292435A33E004B858F /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 77FC6F412435A358004B858F /* Products */;
+					ProjectRef = 77FC6F402435A358004B858F /* LYGraffiti.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				77FC6F272435A33E004B858F /* LYGraffitiDemo */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		77FC6F4D2435A358004B858F /* LYGraffiti.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LYGraffiti.framework;
+			remoteRef = 77FC6F4C2435A358004B858F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		77FC6F262435A33E004B858F /* Resources */ = {
@@ -127,7 +205,10 @@
 			files = (
 				77FC6F382435A33F004B858F /* LaunchScreen.storyboard in Resources */,
 				77FC6F352435A33F004B858F /* Assets.xcassets in Resources */,
+				77FC6F522435A358004B858F /* Info.plist in Resources */,
+				77FC6F502435A358004B858F /* ios_sim.xcarchive in Resources */,
 				77FC6F332435A33E004B858F /* Main.storyboard in Resources */,
+				77FC6F4E2435A358004B858F /* ios.xcarchive in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77FC6F302435A33E004B858F /* ViewController.swift in Sources */,
+				77FC6F512435A358004B858F /* DrawingBoard.swift in Sources */,
 				77FC6F2C2435A33E004B858F /* AppDelegate.swift in Sources */,
 				77FC6F2E2435A33E004B858F /* SceneDelegate.swift in Sources */,
 			);

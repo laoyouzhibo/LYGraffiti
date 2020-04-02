@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LYGraffiti
 
 class ViewController: UIViewController {
 
