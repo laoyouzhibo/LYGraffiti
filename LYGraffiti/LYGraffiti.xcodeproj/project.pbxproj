@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77FC6ECE243594CB004B858F /* LYGraffiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 77FC6ECC243594CB004B858F /* LYGraffiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		77FC6ED52435969A004B858F /* DrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6ED424359699004B858F /* DrawingBoard.swift */; };
+		773B2D5D243738CE002D0844 /* ImageCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B2D5C243738CE002D0844 /* ImageCoordinate.swift */; };
+		77FC6F8F2435AACD004B858F /* LYGraffiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 77FC6F8D2435AACD004B858F /* LYGraffiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		77FC6FA12435AB4A004B858F /* DrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6FA02435AB4A004B858F /* DrawingBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		77FC6EC9243594CB004B858F /* LYGraffiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYGraffiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77FC6ECC243594CB004B858F /* LYGraffiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGraffiti.h; sourceTree = "<group>"; };
-		77FC6ECD243594CB004B858F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77FC6ED424359699004B858F /* DrawingBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingBoard.swift; sourceTree = "<group>"; };
+		773B2D5C243738CE002D0844 /* ImageCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCoordinate.swift; sourceTree = "<group>"; };
+		77FC6F8A2435AACD004B858F /* LYGraffiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYGraffiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77FC6F8D2435AACD004B858F /* LYGraffiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGraffiti.h; sourceTree = "<group>"; };
+		77FC6F8E2435AACD004B858F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77FC6FA02435AB4A004B858F /* DrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingBoard.swift; sourceTree = "<group>"; };
+		77FC6FA72435AD1F004B858F /* ios.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ios.xcarchive; sourceTree = "<group>"; };
+		77FC6FA82435AD1F004B858F /* LYGraffiti.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LYGraffiti.xcframework; sourceTree = "<group>"; };
+		77FC6FA92435AD1F004B858F /* ios_sim.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ios_sim.xcarchive; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		77FC6EC6243594CB004B858F /* Frameworks */ = {
+		77FC6F872435AACD004B858F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -29,54 +34,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77FC6EBF243594CB004B858F = {
+		77FC6F802435AACD004B858F = {
 			isa = PBXGroup;
 			children = (
-				77FC6ECB243594CB004B858F /* LYGraffiti */,
-				77FC6ECA243594CB004B858F /* Products */,
+				77FC6F8C2435AACD004B858F /* LYGraffiti */,
+				77FC6F8B2435AACD004B858F /* Products */,
+				77FC6FA62435AD1F004B858F /* build */,
 			);
 			sourceTree = "<group>";
 		};
-		77FC6ECA243594CB004B858F /* Products */ = {
+		77FC6F8B2435AACD004B858F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77FC6EC9243594CB004B858F /* LYGraffiti.framework */,
+				77FC6F8A2435AACD004B858F /* LYGraffiti.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		77FC6ECB243594CB004B858F /* LYGraffiti */ = {
+		77FC6F8C2435AACD004B858F /* LYGraffiti */ = {
 			isa = PBXGroup;
 			children = (
-				77FC6ECC243594CB004B858F /* LYGraffiti.h */,
-				77FC6ECD243594CB004B858F /* Info.plist */,
-				77FC6ED424359699004B858F /* DrawingBoard.swift */,
+				77FC6F8D2435AACD004B858F /* LYGraffiti.h */,
+				77FC6FA02435AB4A004B858F /* DrawingBoard.swift */,
+				77FC6F8E2435AACD004B858F /* Info.plist */,
+				773B2D5C243738CE002D0844 /* ImageCoordinate.swift */,
 			);
 			path = LYGraffiti;
+			sourceTree = "<group>";
+		};
+		77FC6FA62435AD1F004B858F /* build */ = {
+			isa = PBXGroup;
+			children = (
+				77FC6FA72435AD1F004B858F /* ios.xcarchive */,
+				77FC6FA82435AD1F004B858F /* LYGraffiti.xcframework */,
+				77FC6FA92435AD1F004B858F /* ios_sim.xcarchive */,
+			);
+			path = build;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		77FC6EC4243594CB004B858F /* Headers */ = {
+		77FC6F852435AACD004B858F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77FC6ECE243594CB004B858F /* LYGraffiti.h in Headers */,
+				77FC6F8F2435AACD004B858F /* LYGraffiti.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		77FC6EC8243594CB004B858F /* LYGraffiti */ = {
+		77FC6F892435AACD004B858F /* LYGraffiti */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77FC6ED1243594CB004B858F /* Build configuration list for PBXNativeTarget "LYGraffiti" */;
+			buildConfigurationList = 77FC6F922435AACD004B858F /* Build configuration list for PBXNativeTarget "LYGraffiti" */;
 			buildPhases = (
-				77FC6EC4243594CB004B858F /* Headers */,
-				77FC6EC5243594CB004B858F /* Sources */,
-				77FC6EC6243594CB004B858F /* Frameworks */,
-				77FC6EC7243594CB004B858F /* Resources */,
+				77FC6F852435AACD004B858F /* Headers */,
+				77FC6F862435AACD004B858F /* Sources */,
+				77FC6F872435AACD004B858F /* Frameworks */,
+				77FC6F882435AACD004B858F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -84,25 +101,25 @@
 			);
 			name = LYGraffiti;
 			productName = LYGraffiti;
-			productReference = 77FC6EC9243594CB004B858F /* LYGraffiti.framework */;
+			productReference = 77FC6F8A2435AACD004B858F /* LYGraffiti.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		77FC6EC0243594CB004B858F /* Project object */ = {
+		77FC6F812435AACD004B858F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Laoyou;
 				TargetAttributes = {
-					77FC6EC8243594CB004B858F = {
+					77FC6F892435AACD004B858F = {
 						CreatedOnToolsVersion = 11.3.1;
 						LastSwiftMigration = 1130;
 					};
 				};
 			};
-			buildConfigurationList = 77FC6EC3243594CB004B858F /* Build configuration list for PBXProject "LYGraffiti" */;
+			buildConfigurationList = 77FC6F842435AACD004B858F /* Build configuration list for PBXProject "LYGraffiti" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,18 +127,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 77FC6EBF243594CB004B858F;
-			productRefGroup = 77FC6ECA243594CB004B858F /* Products */;
+			mainGroup = 77FC6F802435AACD004B858F;
+			productRefGroup = 77FC6F8B2435AACD004B858F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77FC6EC8243594CB004B858F /* LYGraffiti */,
+				77FC6F892435AACD004B858F /* LYGraffiti */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		77FC6EC7243594CB004B858F /* Resources */ = {
+		77FC6F882435AACD004B858F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -131,22 +148,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		77FC6EC5243594CB004B858F /* Sources */ = {
+		77FC6F862435AACD004B858F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77FC6ED52435969A004B858F /* DrawingBoard.swift in Sources */,
+				77FC6FA12435AB4A004B858F /* DrawingBoard.swift in Sources */,
+				773B2D5D243738CE002D0844 /* ImageCoordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		77FC6ECF243594CB004B858F /* Debug */ = {
+		77FC6F902435AACD004B858F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -206,11 +223,10 @@
 			};
 			name = Debug;
 		};
-		77FC6ED0243594CB004B858F /* Release */ = {
+		77FC6F912435AACD004B858F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -264,7 +280,7 @@
 			};
 			name = Release;
 		};
-		77FC6ED2243594CB004B858F /* Debug */ = {
+		77FC6F932435AACD004B858F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -290,7 +306,7 @@
 			};
 			name = Debug;
 		};
-		77FC6ED3243594CB004B858F /* Release */ = {
+		77FC6F942435AACD004B858F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -318,25 +334,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77FC6EC3243594CB004B858F /* Build configuration list for PBXProject "LYGraffiti" */ = {
+		77FC6F842435AACD004B858F /* Build configuration list for PBXProject "LYGraffiti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77FC6ECF243594CB004B858F /* Debug */,
-				77FC6ED0243594CB004B858F /* Release */,
+				77FC6F902435AACD004B858F /* Debug */,
+				77FC6F912435AACD004B858F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77FC6ED1243594CB004B858F /* Build configuration list for PBXNativeTarget "LYGraffiti" */ = {
+		77FC6F922435AACD004B858F /* Build configuration list for PBXNativeTarget "LYGraffiti" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77FC6ED2243594CB004B858F /* Debug */,
-				77FC6ED3243594CB004B858F /* Release */,
+				77FC6F932435AACD004B858F /* Debug */,
+				77FC6F942435AACD004B858F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 77FC6EC0243594CB004B858F /* Project object */;
+	rootObject = 77FC6F812435AACD004B858F /* Project object */;
 }
