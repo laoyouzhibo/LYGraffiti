@@ -17,6 +17,11 @@ public struct ImageCoordinate: Codable {
     public let x: Int
     public let y: Int
     
+    /// 将x、y的单位转化为point
+    public var point: CGPoint {
+        return CGPoint(x: CGFloat(x) / UIScreen.main.scale, y: CGFloat(y) / UIScreen.main.scale)
+    }
+    
     init(id: String, point: CGPoint) {
         self.id = id
         self.x = (UIScreen.main.scale * point.x).rounded()
@@ -30,20 +35,28 @@ public struct ImageCoordinatesResult: Codable {
     public let originalWidth: Int
     public let originalHeight: Int
     
+    /// 将宽、高的单位转化为point
+    public var size: CGSize {
+        return CGSize(width: CGFloat(originalWidth) / UIScreen.main.scale, height: CGFloat(originalHeight) / UIScreen.main.scale)
+    }
+    
     init(points: [ImageCoordinate], size: CGSize) {
         self.points = points
         self.originalWidth = (UIScreen.main.scale * size.width).rounded()
         self.originalHeight = (UIScreen.main.scale * size.height).rounded()
     }
     
-    public static func `init`(jsonString: String) -> ImageCoordinatesResult? {
+    public init?(jsonString: String) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         if let data = jsonString.data(using: .utf8),
             let result = try? decoder.decode(ImageCoordinatesResult.self, from: data) {
-            return result
+            self.points = result.points
+            self.originalWidth = result.originalWidth
+            self.originalHeight = result.originalHeight
+        } else {
+            return nil
         }
-        return nil
     }
     
     public var jsonString: String {

@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771F7CD02438D64E008F41E5 /* PlayingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771F7CCF2438D64E008F41E5 /* PlayingBoard.swift */; };
+		771F7CD224399805008F41E5 /* LYGraffiti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771F7CD124399805008F41E5 /* LYGraffiti.swift */; };
 		773B2D5D243738CE002D0844 /* ImageCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B2D5C243738CE002D0844 /* ImageCoordinate.swift */; };
 		77FC6F8F2435AACD004B858F /* LYGraffiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 77FC6F8D2435AACD004B858F /* LYGraffiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77FC6FA12435AB4A004B858F /* DrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6FA02435AB4A004B858F /* DrawingBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		771F7CCF2438D64E008F41E5 /* PlayingBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingBoard.swift; sourceTree = "<group>"; };
+		771F7CD124399805008F41E5 /* LYGraffiti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYGraffiti.swift; sourceTree = "<group>"; };
 		773B2D5C243738CE002D0844 /* ImageCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCoordinate.swift; sourceTree = "<group>"; };
 		77FC6F8A2435AACD004B858F /* LYGraffiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYGraffiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FC6F8D2435AACD004B858F /* LYGraffiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGraffiti.h; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 				77FC6FA02435AB4A004B858F /* DrawingBoard.swift */,
 				77FC6F8E2435AACD004B858F /* Info.plist */,
 				773B2D5C243738CE002D0844 /* ImageCoordinate.swift */,
+				771F7CCF2438D64E008F41E5 /* PlayingBoard.swift */,
+				771F7CD124399805008F41E5 /* LYGraffiti.swift */,
 			);
 			path = LYGraffiti;
 			sourceTree = "<group>";
@@ -152,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771F7CD224399805008F41E5 /* LYGraffiti.swift in Sources */,
 				77FC6FA12435AB4A004B858F /* DrawingBoard.swift in Sources */,
+				771F7CD02438D64E008F41E5 /* PlayingBoard.swift in Sources */,
 				773B2D5D243738CE002D0844 /* ImageCoordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
