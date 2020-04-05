@@ -8,10 +8,15 @@
 
 import UIKit
 
+protocol DrawingBoardDelegate: AnyObject {
+    func drawingBoard(_ drawingBoard: DrawingBoard)
+}
+
 public class DrawingBoard: UIView {
 
     private var imageSize: CGSize?
     private var gap: CGFloat = 50
+    private var maxImageCount: Int = 100
     
     typealias BrushImage = (id: String, image: UIImage)
     private var brushImage: BrushImage?
@@ -67,9 +72,11 @@ public class DrawingBoard: UIView {
     /// - Parameters:
     ///   - imageSize: 图片大小，nil代表自适应
     ///   - gap: 连续画多个的间隔，默认值为50
-    public func config(imageSize: CGSize?, gap: CGFloat = 50) {
+    ///   - maxCount: 图片最大个数，默认值为100
+    public func config(imageSize: CGSize?, gap: CGFloat = 50, maxCount: Int = 100) {
         self.imageSize = imageSize
         self.gap = gap
+        self.maxImageCount = maxCount
     }
     
     /// 撤销一次绘制，注意：不要给DrawingBoard添加subview，因为此处实现是调用若干次self.subviews.last?.removeFromSuperview()
@@ -120,12 +127,14 @@ public class DrawingBoard: UIView {
     }
     
     
-    /// <#Description#>
+    /// 添加图片视图
     /// - Parameters:
-    ///   - coordinate: <#coordinate description#>
+    ///   - position: 位置
     ///   - isContinuous: 是否为连续添加，如果是，撤销时则会连同上一次添加的一起删除
-    private func addImageView(position: CGPoint, isContinuous: Bool) {
-        guard let img = brushImage else { return }
+    @discardableResult
+    private func addImageView(position: CGPoint, isContinuous: Bool) -> Bool {
+        guard let img = brushImage, self.bounds.contains(position) else { return false }
+        
         let imageView = UIImageView(image: img.image)
         if let size = imageSize {
             imageView.contentMode = .scaleAspectFill
@@ -148,7 +157,7 @@ public class DrawingBoard: UIView {
         } else {
             imageLocus.append([coordinate])
         }
-        
+        return true
     }
     
     private func addImageViewIfCould() {
@@ -156,10 +165,12 @@ public class DrawingBoard: UIView {
         if let lastCenter = self.circleCenter, let startPoint = lastPoint, let endPoint = currentPoint {
             if let nextCircleCenter = getIntersectionPoint(circleCenter: lastCenter, radius: gap, startPoint: startPoint, endPoint: endPoint) {
                 
-                addImageView(position: nextCircleCenter, isContinuous: true)
-                // 迅速滑动时，lastPoint和currentPoint之间可能需要添加多个image
-                lastPoint = circleCenter
-                addImageViewIfCould()
+                if addImageView(position: nextCircleCenter, isContinuous: true) {
+                    // 迅速滑动时，lastPoint和currentPoint之间可能需要添加多个image
+                    lastPoint = circleCenter
+                    addImageViewIfCould()
+                }
+                
             }
         }
     }
