@@ -8,14 +8,16 @@
 
 import UIKit
 
-protocol DrawingBoardDelegate: AnyObject {
-    func drawingBoard(_ drawingBoard: DrawingBoard)
+public protocol DrawingBoardDelegate: AnyObject {
+    func drawingBoard(_ drawingBoard: DrawingBoard, didDrawMax count: Int)
 }
 
 public class DrawingBoard: UIView {
 
+    public weak var delegate: DrawingBoardDelegate?
+    
     private var imageSize: CGSize?
-    private var gap: CGFloat = 50
+    private var minDistance: CGFloat = 35
     private var maxImageCount: Int = 100
     
     typealias BrushImage = (id: String, image: UIImage)
@@ -71,11 +73,11 @@ public class DrawingBoard: UIView {
     /// 配置一些参数
     /// - Parameters:
     ///   - imageSize: 图片大小，nil代表自适应
-    ///   - gap: 连续画多个的间隔，默认值为50
+    ///   - minDistance: 连续画多个的间隔，默认值为35
     ///   - maxCount: 图片最大个数，默认值为100
-    public func config(imageSize: CGSize?, gap: CGFloat = 50, maxCount: Int = 100) {
+    public func config(imageSize: CGSize?, minDistance: CGFloat = 35, maxCount: Int = 100) {
         self.imageSize = imageSize
-        self.gap = gap
+        self.minDistance = minDistance
         self.maxImageCount = maxCount
     }
     
@@ -97,7 +99,7 @@ public class DrawingBoard: UIView {
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let img = brushImage, let beganPoint = touches.first?.location(in: self) else { return }
+        guard let _ = brushImage, let beganPoint = touches.first?.location(in: self) else { return }
         currentPoint = beganPoint
         
         addImageView(position: beganPoint, isContinuous: false)
@@ -106,7 +108,7 @@ public class DrawingBoard: UIView {
     }
     
     public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let img = brushImage, let movedPoint = touches.first?.location(in: self) else { return }
+        guard let _ = brushImage, let movedPoint = touches.first?.location(in: self) else { return }
         if movedPoint != currentPoint {
             currentPoint = movedPoint
             addImageViewIfCould()
@@ -115,14 +117,19 @@ public class DrawingBoard: UIView {
     }
     
     public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let img = brushImage else { return }
-        let endedPoint = touches.first?.location(in: self)
+        guard brushImage != nil, let endedPoint = touches.first?.location(in: self) else { return }
+        
+        circleCenter = nil
+        currentPoint = nil
+        lastPoint = nil
         print("endedPoint: \(endedPoint)")
     }
     
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let img = brushImage else { return }
-        let cancelledPoint = touches.first?.location(in: self)
+        guard brushImage != nil, let cancelledPoint = touches.first?.location(in: self) else { return }
+        circleCenter = nil
+        currentPoint = nil
+        lastPoint = nil
         print("cancelledPoint: \(cancelledPoint)")
     }
     
@@ -134,6 +141,11 @@ public class DrawingBoard: UIView {
     @discardableResult
     private func addImageView(position: CGPoint, isContinuous: Bool) -> Bool {
         guard let img = brushImage, self.bounds.contains(position) else { return false }
+        
+        if imageCoordinates.count >= maxImageCount {
+            delegate?.drawingBoard(self, didDrawMax: imageCoordinates.count)
+            return false
+        }
         
         let imageView = UIImageView(image: img.image)
         if let size = imageSize {
@@ -163,7 +175,7 @@ public class DrawingBoard: UIView {
     private func addImageViewIfCould() {
         
         if let lastCenter = self.circleCenter, let startPoint = lastPoint, let endPoint = currentPoint {
-            if let nextCircleCenter = getIntersectionPoint(circleCenter: lastCenter, radius: gap, startPoint: startPoint, endPoint: endPoint) {
+            if let nextCircleCenter = getIntersectionPoint(circleCenter: lastCenter, radius: minDistance, startPoint: startPoint, endPoint: endPoint) {
                 
                 if addImageView(position: nextCircleCenter, isContinuous: true) {
                     // 迅速滑动时，lastPoint和currentPoint之间可能需要添加多个image
@@ -175,7 +187,7 @@ public class DrawingBoard: UIView {
         }
     }
     
-    /// https://thecodeway.com/blog/?p=932
+    /// 求圆与线段的交点，参考自：https://thecodeway.com/blog/?p=932
     /// 没有交点返回nil，两个交点返回其中一个
     private func getIntersectionPoint(circleCenter: CGPoint, radius: CGFloat, startPoint: CGPoint, endPoint: CGPoint) -> CGPoint? {
         guard startPoint != endPoint else { return nil }

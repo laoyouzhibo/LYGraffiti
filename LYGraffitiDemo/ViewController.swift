@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBAction func giftButtonClick(_ sender: UIButton) {
         if drawingBoard == nil {
             let drawingBoard = DrawingBoard()
+            drawingBoard.delegate = self
             self.drawingBoard = drawingBoard
             view.addSubview(drawingBoard)
             drawingBoard.frame = .init(x: 0, y: view.safeAreaInsets.top, width: view.bounds.width, height: view.bounds.height - view.safeAreaInsets.bottom - view.safeAreaInsets.top - 200)
@@ -57,3 +58,9 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: DrawingBoardDelegate {
+    func drawingBoard(_ drawingBoard: DrawingBoard, didDrawMax count: Int) {
+        let alert = UIAlertController(title: nil, message: "最多绘制100个礼物", preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
+    }
+}

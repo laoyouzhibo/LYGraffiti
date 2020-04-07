@@ -33,7 +33,8 @@ class PlayingBoard: UIView {
     /// - Parameters:
     ///   - imageCoordinatesResult: 图片轨迹坐标
     ///   - images: Key: 图片id, Value: id对应的图片
-    ///   - imageSize: 图片最终显示的大小, 单位point
+    ///   - imageSize: 图片最终显示的大小, 单位point, nil代表sizeToFit
+    ///   - completion: 动画完成的回调
     func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], imageSize: CGSize?, completion: @escaping () -> Void) {
         
         guard let _ = self.superview else {
@@ -66,7 +67,7 @@ class PlayingBoard: UIView {
         }
         
         playSingleAnimation(imageViews: imageViews, index: 0, duration: singleDuration) {
-            UIView.animate(withDuration: self.dismissDuration, animations: {
+            UIView.animate(withDuration: self.dismissDuration, delay: self.stayDuration, animations: {
                 for imgView in imageViews {
                     imgView.alpha = 0
                     imgView.transform = .init(scaleX: 2, y: 2)
