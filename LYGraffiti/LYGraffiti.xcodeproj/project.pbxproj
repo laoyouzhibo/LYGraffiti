@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		771F7CD02438D64E008F41E5 /* PlayingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771F7CCF2438D64E008F41E5 /* PlayingBoard.swift */; };
 		771F7CD224399805008F41E5 /* LYGraffiti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771F7CD124399805008F41E5 /* LYGraffiti.swift */; };
 		773B2D5D243738CE002D0844 /* ImageCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773B2D5C243738CE002D0844 /* ImageCoordinate.swift */; };
-		773D0BBA243ECAF500A5FC35 /* LYGraffiti.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 773D0BB9243ECAF500A5FC35 /* LYGraffiti.xcframework */; };
 		77FC6F8F2435AACD004B858F /* LYGraffiti.h in Headers */ = {isa = PBXBuildFile; fileRef = 77FC6F8D2435AACD004B858F /* LYGraffiti.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		77FC6FA12435AB4A004B858F /* DrawingBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6FA02435AB4A004B858F /* DrawingBoard.swift */; };
 /* End PBXBuildFile section */
@@ -19,13 +18,10 @@
 		771F7CCF2438D64E008F41E5 /* PlayingBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingBoard.swift; sourceTree = "<group>"; };
 		771F7CD124399805008F41E5 /* LYGraffiti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYGraffiti.swift; sourceTree = "<group>"; };
 		773B2D5C243738CE002D0844 /* ImageCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCoordinate.swift; sourceTree = "<group>"; };
-		773D0BB9243ECAF500A5FC35 /* LYGraffiti.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = LYGraffiti.xcframework; sourceTree = "<group>"; };
 		77FC6F8A2435AACD004B858F /* LYGraffiti.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYGraffiti.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FC6F8D2435AACD004B858F /* LYGraffiti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYGraffiti.h; sourceTree = "<group>"; };
 		77FC6F8E2435AACD004B858F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77FC6FA02435AB4A004B858F /* DrawingBoard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingBoard.swift; sourceTree = "<group>"; };
-		77FC6FA72435AD1F004B858F /* ios.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ios.xcarchive; sourceTree = "<group>"; };
-		77FC6FA92435AD1F004B858F /* ios_sim.xcarchive */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ios_sim.xcarchive; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +29,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				773D0BBA243ECAF500A5FC35 /* LYGraffiti.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +40,6 @@
 			children = (
 				77FC6F8C2435AACD004B858F /* LYGraffiti */,
 				77FC6F8B2435AACD004B858F /* Products */,
-				77FC6FA62435AD1F004B858F /* build */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,16 +62,6 @@
 				771F7CD124399805008F41E5 /* LYGraffiti.swift */,
 			);
 			path = LYGraffiti;
-			sourceTree = "<group>";
-		};
-		77FC6FA62435AD1F004B858F /* build */ = {
-			isa = PBXGroup;
-			children = (
-				773D0BB9243ECAF500A5FC35 /* LYGraffiti.xcframework */,
-				77FC6FA72435AD1F004B858F /* ios.xcarchive */,
-				77FC6FA92435AD1F004B858F /* ios_sim.xcarchive */,
-			);
-			path = build;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
