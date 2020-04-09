@@ -70,8 +70,8 @@
 		77FC6F1F2435A33E004B858F = {
 			isa = PBXGroup;
 			children = (
-				77FC6FB72435C099004B858F /* LYGraffiti.xcodeproj */,
 				77FC6F7D2435A6F7004B858F /* README.md */,
+				77FC6FB72435C099004B858F /* LYGraffiti.xcodeproj */,
 				77FC6F2A2435A33E004B858F /* LYGraffitiDemo */,
 				77FC6F292435A33E004B858F /* Products */,
 				77FC6F792435A660004B858F /* Frameworks */,

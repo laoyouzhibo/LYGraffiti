@@ -3,7 +3,7 @@
 //  LYGraffitiDemo
 //
 //  Created by 周子聪 on 4/2/20.
-//  Copyright © 2020 Laoyou. All rights reserved.
+//  Copyright © 2020 Monologue. All rights reserved.
 //
 
 import UIKit
@@ -59,8 +59,22 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: DrawingBoardDelegate {
-    func drawingBoard(_ drawingBoard: DrawingBoard, didDrawMax count: Int) {
-        let alert = UIAlertController(title: nil, message: "最多绘制100个礼物", preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
+    func drawingBoard(_ drawingBoard: DrawingBoard, updateDrawCount count: Int) {
+        print("did draw count: \(count)")
+        if count == 0 {
+            // add empty view
+        } else {
+            // remove empty view
+        }
     }
+    
+    func drawingBoard(_ drawingBoard: DrawingBoard, shouldDrawItemAt index: Int, coordinate: ImageCoordinate) -> Bool {
+        if index >= 100 {
+            let alert = UIAlertController(title: nil, message: "最多绘制100个礼物", preferredStyle: .alert)
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        return true
+    }
+    
 }

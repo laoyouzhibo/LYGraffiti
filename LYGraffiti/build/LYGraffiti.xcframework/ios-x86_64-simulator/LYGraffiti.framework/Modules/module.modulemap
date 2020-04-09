@@ -1,0 +1,11 @@
+framework module LYGraffiti {
+  umbrella header "LYGraffiti.h"
+
+  export *
+  module * { export * }
+}
+
+module LYGraffiti.Swift {
+    header "LYGraffiti-Swift.h"
+    requires objc
+}

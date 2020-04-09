@@ -3,7 +3,7 @@
 //  LYGraffiti
 //
 //  Created by 周子聪 on 4/3/20.
-//  Copyright © 2020 Laoyou. All rights reserved.
+//  Copyright © 2020 Monologue. All rights reserved.
 //
 
 import Foundation
@@ -67,6 +67,17 @@ public struct ImageCoordinatesResult: Codable {
             return string
         }
         return "{}"
+    }
+    
+    public var dictionaryValue: [String: Any] {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        if let data = try? encoder.encode(self) {
+            if let dict = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+                return dict
+            }
+        }
+        return [:]
     }
 }
 

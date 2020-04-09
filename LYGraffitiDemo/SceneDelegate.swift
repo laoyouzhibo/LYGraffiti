@@ -3,7 +3,7 @@
 //  LYGraffitiDemo
 //
 //  Created by 周子聪 on 4/2/20.
-//  Copyright © 2020 Laoyou. All rights reserved.
+//  Copyright © 2020 Monologue. All rights reserved.
 //
 
 import UIKit

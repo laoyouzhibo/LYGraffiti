@@ -1,0 +1,62 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
+// swift-module-flags: -target arm64-apple-ios13.2 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LYGraffiti
+import Foundation
+@_exported import LYGraffiti
+import Swift
+import UIKit
+public func play(imageCoordinatesResult: LYGraffiti.ImageCoordinatesResult, images: [Swift.String : UIKit.UIImage], imageSize: CoreGraphics.CGSize?, in view: UIKit.UIView, inset: UIKit.UIEdgeInsets)
+public protocol DrawingBoardDelegate : AnyObject {
+  func drawingBoard(_ drawingBoard: LYGraffiti.DrawingBoard, shouldDrawItemAt index: Swift.Int, coordinate: LYGraffiti.ImageCoordinate) -> Swift.Bool
+  func drawingBoard(_ drawingBoard: LYGraffiti.DrawingBoard, updateDrawCount count: Swift.Int)
+}
+@objc @_hasMissingDesignatedInitializers public class DrawingBoard : UIKit.UIView {
+  weak public var delegate: LYGraffiti.DrawingBoardDelegate?
+  public var isEmpty: Swift.Bool {
+    get
+  }
+  public var imageCoordinates: [LYGraffiti.ImageCoordinate] {
+    get
+  }
+  public var imageCoordinatesResult: LYGraffiti.ImageCoordinatesResult {
+    get
+  }
+  @objc dynamic public init()
+  @objc deinit
+  public func setBrush(id: Swift.String, image: UIKit.UIImage)
+  public func config(imageSize: CoreGraphics.CGSize?, minDistance: CoreGraphics.CGFloat = 35)
+  public func undo()
+  public func clear()
+  @objc override dynamic public func touchesBegan(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesEnded(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public func touchesCancelled(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent?)
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+}
+public struct ImageCoordinate : Swift.Codable {
+  public let id: Swift.String
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public var point: CoreGraphics.CGPoint {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ImageCoordinatesResult : Swift.Codable {
+  public let points: [LYGraffiti.ImageCoordinate]
+  public let originalWidth: Swift.Int
+  public let originalHeight: Swift.Int
+  public var size: CoreGraphics.CGSize {
+    get
+  }
+  public init?(jsonString: Swift.String)
+  public var jsonString: Swift.String {
+    get
+  }
+  public var dictionaryValue: [Swift.String : Any] {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}

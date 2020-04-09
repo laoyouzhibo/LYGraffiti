@@ -3,13 +3,14 @@
 //  LYGraffiti
 //
 //  Created by 周子聪 on 4/2/20.
-//  Copyright © 2020 Laoyou. All rights reserved.
+//  Copyright © 2020 Monologue. All rights reserved.
 //
 
 import UIKit
 
 public protocol DrawingBoardDelegate: AnyObject {
-    func drawingBoard(_ drawingBoard: DrawingBoard, didDrawMax count: Int)
+    func drawingBoard(_ drawingBoard: DrawingBoard, shouldDrawItemAt index: Int, coordinate: ImageCoordinate) -> Bool
+    func drawingBoard(_ drawingBoard: DrawingBoard, updateDrawCount count: Int)
 }
 
 public class DrawingBoard: UIView {
@@ -18,7 +19,6 @@ public class DrawingBoard: UIView {
     
     private var imageSize: CGSize?
     private var minDistance: CGFloat = 35
-    private var maxImageCount: Int = 100
     
     typealias BrushImage = (id: String, image: UIImage)
     private var brushImage: BrushImage?
@@ -37,10 +37,11 @@ public class DrawingBoard: UIView {
         return imageLocus.isEmpty
     }
     
-    private var imageCoordinates: [ImageCoordinate] {
+    /// 当前涂鸦信息
+    public var imageCoordinates: [ImageCoordinate] {
         return imageLocus.flatMap { $0 }
     }
-    
+    /// 代表当前画板及涂鸦信息。对imageCoordinates属性的一层封装，并加上了画板大小
     public var imageCoordinatesResult: ImageCoordinatesResult {
         return ImageCoordinatesResult(points: imageCoordinates, size: self.bounds.size)
     }
@@ -74,19 +75,18 @@ public class DrawingBoard: UIView {
     /// - Parameters:
     ///   - imageSize: 图片大小，nil代表自适应
     ///   - minDistance: 连续画多个的间隔，默认值为35
-    ///   - maxCount: 图片最大个数，默认值为100
-    public func config(imageSize: CGSize?, minDistance: CGFloat = 35, maxCount: Int = 100) {
+    public func config(imageSize: CGSize?, minDistance: CGFloat = 35) {
         self.imageSize = imageSize
         self.minDistance = minDistance
-        self.maxImageCount = maxCount
     }
     
-    /// 撤销一次绘制，注意：不要给DrawingBoard添加subview，因为此处实现是调用若干次self.subviews.last?.removeFromSuperview()
+    /// 撤销一次绘制，注意：不要给DrawingBoard添加subview，因为此处实现是调用一次或多次self.subviews.last?.removeFromSuperview()
     public func undo() {
         if let lastImageLocus = imageLocus.popLast() {
             for _ in 0 ..< lastImageLocus.count {
                 self.subviews.last?.removeFromSuperview()
             }
+            updateDrawCount()
         }
     }
     
@@ -96,6 +96,11 @@ public class DrawingBoard: UIView {
         for v in self.subviews {
             v.removeFromSuperview()
         }
+        updateDrawCount()
+    }
+    
+    private func updateDrawCount() {
+        delegate?.drawingBoard(self, updateDrawCount: imageCoordinates.count)
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -142,8 +147,9 @@ public class DrawingBoard: UIView {
     private func addImageView(position: CGPoint, isContinuous: Bool) -> Bool {
         guard let img = brushImage, self.bounds.contains(position) else { return false }
         
-        if imageCoordinates.count >= maxImageCount {
-            delegate?.drawingBoard(self, didDrawMax: imageCoordinates.count)
+        let coordinate = ImageCoordinate(id: img.id, point: position)
+        let shouldDraw = delegate?.drawingBoard(self, shouldDrawItemAt: imageCoordinates.count, coordinate: coordinate) ?? true
+        if !shouldDraw {
             return false
         }
         
@@ -159,8 +165,6 @@ public class DrawingBoard: UIView {
         
         circleCenter = position
         
-        let coordinate = ImageCoordinate(id: img.id, point: position)
-
         if isContinuous {
             if var imageCoords = imageLocus.popLast() {
                 imageCoords.append(coordinate)
@@ -169,6 +173,7 @@ public class DrawingBoard: UIView {
         } else {
             imageLocus.append([coordinate])
         }
+        updateDrawCount()
         return true
     }
     

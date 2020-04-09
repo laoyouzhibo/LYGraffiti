@@ -3,12 +3,12 @@
 //  LYGraffiti
 //
 //  Created by 周子聪 on 4/5/20.
-//  Copyright © 2020 Laoyou. All rights reserved.
+//  Copyright © 2020 Monologue. All rights reserved.
 //
 
 import UIKit
 
-public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], in view: UIView, inset: UIEdgeInsets) {
+public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], imageSize: CGSize?, in view: UIView, inset: UIEdgeInsets) {
     let playingBoard = PlayingBoard()
     view.addSubview(playingBoard)
         
@@ -29,8 +29,7 @@ public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String
         playingBoard.frame = .init(x: x, y: inset.top, width: width, height: maxHeight)
     }
     
-    #warning("TO DO: imageSize")
-    playingBoard.play(imageCoordinatesResult: imageCoordinatesResult, images: images, imageSize: nil) {
+    playingBoard.play(imageCoordinatesResult: imageCoordinatesResult, images: images, imageSize: imageSize) {
         playingBoard.removeFromSuperview()
     }
 }
