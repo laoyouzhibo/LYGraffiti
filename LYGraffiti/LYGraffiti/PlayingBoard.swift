@@ -52,8 +52,7 @@ class PlayingBoard: UIView {
             guard let image = images[imageCoordinate.id] else { continue }
             
             let imageView = UIImageView(image: image)
-            imageView.transform = .init(scaleX: 0.3, y: 0.3)
-            imageView.alpha = 0
+            
             if let size = imageSize {
                 imageView.contentMode = .scaleAspectFill
                 imageView.frame.size = size
@@ -64,6 +63,8 @@ class PlayingBoard: UIView {
             addSubview(imageView)
             imageViews.append(imageView)
 
+            imageView.transform = .init(scaleX: 0.3, y: 0.3)
+            imageView.alpha = 0
         }
         
         playSingleAnimation(imageViews: imageViews, index: 0, duration: singleDuration) {

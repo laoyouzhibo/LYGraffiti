@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBAction func giftButtonClick(_ sender: UIButton) {
         if drawingBoard == nil {
             let drawingBoard = DrawingBoard()
+            drawingBoard.config(imageSize: .init(width: 40, height: 40))
             drawingBoard.delegate = self
             self.drawingBoard = drawingBoard
             view.addSubview(drawingBoard)
@@ -42,7 +43,7 @@ class ViewController: UIViewController {
         self.drawingBoard.removeFromSuperview()
         
         if let imageCoordinatesResult = ImageCoordinatesResult(jsonString: jsonString) {
-            play(imageCoordinatesResult: imageCoordinatesResult, images: ["0": #imageLiteral(resourceName: "gift1"), "1": #imageLiteral(resourceName: "gift2")], in: self.view, inset: .init(top: 20, left: 20, bottom: 20, right: 20))
+            play(imageCoordinatesResult: imageCoordinatesResult, images: ["0": #imageLiteral(resourceName: "gift1"), "1": #imageLiteral(resourceName: "gift2")], imageSize: .init(width: 40, height: 40), in: self.view, inset: .init(top: 20, left: 20, bottom: 20, right: 20))
         }
     }
     
