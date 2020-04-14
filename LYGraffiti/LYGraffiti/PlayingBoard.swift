@@ -8,25 +8,25 @@
 
 import UIKit
 
-class PlayingBoard: UIView {
+public class PlayingBoard: UIView {
 
     let totalDuration: TimeInterval = 4
     let stayDuration: TimeInterval = 1
     let dismissDuration: TimeInterval = 0.5
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.isUserInteractionEnabled = false
     }
     
     
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         super.init(coder: coder)
         self.isUserInteractionEnabled = false
     }
     
     deinit {
-        print("PlayingBoard deinit")
+        // print("PlayingBoard deinit")
     }
     
     /// 播放图片轨迹动画，调用前需确保frame.size正确
@@ -35,7 +35,7 @@ class PlayingBoard: UIView {
     ///   - images: Key: 图片id, Value: id对应的图片
     ///   - imageSize: 图片最终显示的大小, 单位point, nil代表sizeToFit
     ///   - completion: 动画完成的回调
-    func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], imageSize: CGSize?, completion: @escaping () -> Void) {
+    public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], imageSize: CGSize?, completion: @escaping () -> Void) {
         
         guard let _ = self.superview else {
             return

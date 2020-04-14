@@ -61,7 +61,7 @@ public class DrawingBoard: UIView {
     }
     
     deinit {
-        print("DrawingBoard deinit")
+        // print("DrawingBoard deinit")
     }
     /// 设置笔刷为指定图片
     /// - Parameters:
@@ -108,7 +108,7 @@ public class DrawingBoard: UIView {
         currentPoint = beganPoint
         
         addImageView(position: beganPoint, isContinuous: false)
-        print("beganPoint: \(beganPoint)")
+        // print("beganPoint: \(beganPoint)")
         
     }
     
@@ -117,7 +117,7 @@ public class DrawingBoard: UIView {
         if movedPoint != currentPoint {
             currentPoint = movedPoint
             addImageViewIfCould()
-            print("movedPoint: \(movedPoint)")
+            // print("movedPoint: \(movedPoint)")
         }
     }
     
@@ -127,7 +127,7 @@ public class DrawingBoard: UIView {
         circleCenter = nil
         currentPoint = nil
         lastPoint = nil
-        print("endedPoint: \(endedPoint)")
+        // print("endedPoint: \(endedPoint)")
     }
     
     public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -135,7 +135,7 @@ public class DrawingBoard: UIView {
         circleCenter = nil
         currentPoint = nil
         lastPoint = nil
-        print("cancelledPoint: \(cancelledPoint)")
+        // print("cancelledPoint: \(cancelledPoint)")
     }
     
     
@@ -207,7 +207,7 @@ public class DrawingBoard: UIView {
             let sqrtCondition = sqrt(condition)
             let u1 = (-B + sqrtCondition)/(2*A)
             let u2 = (-B - sqrtCondition)/(2*A)
-            print("u1: \(u1) u2: \(u2)")
+            // print("u1: \(u1) u2: \(u2)")
             if u1 >= 0 && u1 <= 1 {
                 let x = startPoint.x+u1*(endPoint.x-startPoint.x)
                 let y = startPoint.y+u1*(endPoint.y-startPoint.y)

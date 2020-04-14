@@ -8,7 +8,7 @@
 
 import UIKit
 
-public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], imageSize: CGSize?, in view: UIView, inset: UIEdgeInsets) {
+public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String: UIImage], imageSize: CGSize?, in view: UIView, inset: UIEdgeInsets, completion: @escaping () -> Void) {
     let playingBoard = PlayingBoard()
     view.addSubview(playingBoard)
         
@@ -31,5 +31,6 @@ public func play(imageCoordinatesResult: ImageCoordinatesResult, images: [String
     
     playingBoard.play(imageCoordinatesResult: imageCoordinatesResult, images: images, imageSize: imageSize) {
         playingBoard.removeFromSuperview()
+        completion()
     }
 }

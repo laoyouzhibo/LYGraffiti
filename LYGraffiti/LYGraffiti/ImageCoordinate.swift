@@ -13,6 +13,7 @@ import UIKit
 /// 图片的坐标信息，x、y均以像素为单位
 public struct ImageCoordinate: Codable {
     
+    /// 图片的唯一标志
     public let id: String
     public let x: Int
     public let y: Int
@@ -78,6 +79,15 @@ public struct ImageCoordinatesResult: Codable {
             }
         }
         return [:]
+    }
+    
+    /// 轨迹中不同图片的数量。Key：图片ID，Value：图片数量
+    public var differentImageCounts: [String: Int] {
+        return points.reduce([:]) { (dic, imageCoordinate) -> [String: Int] in
+            var differentImageCounts = dic
+            differentImageCounts[imageCoordinate.id] = (dic[imageCoordinate.id] ?? 0) + 1
+            return differentImageCounts
+        }
     }
 }
 
