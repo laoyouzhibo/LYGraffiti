@@ -31,7 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7779DA82264A843D0034E11E /* LYGraffiti */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LYGraffiti; path = ../../Downloads/LYGraffiti; sourceTree = "<group>"; };
+		7779DA85264A8B760034E11E /* LYGraffiti */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LYGraffiti; sourceTree = "<group>"; };
 		77FC6F282435A33E004B858F /* LYGraffitiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYGraffitiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FC6F2B2435A33E004B858F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77FC6F2D2435A33E004B858F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				77FC6F7D2435A6F7004B858F /* README.md */,
-				7779DA82264A843D0034E11E /* LYGraffiti */,
+				7779DA85264A8B760034E11E /* LYGraffiti */,
 				77FC6F2A2435A33E004B858F /* LYGraffitiDemo */,
 				77FC6F292435A33E004B858F /* Products */,
 				77FC6F792435A660004B858F /* Frameworks */,
