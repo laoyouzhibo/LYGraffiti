@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7779DA84264A84520034E11E /* LYGraffiti in Frameworks */ = {isa = PBXBuildFile; productRef = 7779DA83264A84520034E11E /* LYGraffiti */; };
 		77FC6F2C2435A33E004B858F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6F2B2435A33E004B858F /* AppDelegate.swift */; };
 		77FC6F2E2435A33E004B858F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6F2D2435A33E004B858F /* SceneDelegate.swift */; };
 		77FC6F302435A33E004B858F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FC6F2F2435A33E004B858F /* ViewController.swift */; };
@@ -14,19 +15,7 @@
 		77FC6F352435A33F004B858F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F342435A33F004B858F /* Assets.xcassets */; };
 		77FC6F382435A33F004B858F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F362435A33F004B858F /* LaunchScreen.storyboard */; };
 		77FC6F7E2435A6F7004B858F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 77FC6F7D2435A6F7004B858F /* README.md */; };
-		77FC6FC22435C984004B858F /* LYGraffiti.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77FC6FBC2435C099004B858F /* LYGraffiti.framework */; };
-		77FC6FC32435C984004B858F /* LYGraffiti.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 77FC6FBC2435C099004B858F /* LYGraffiti.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		77FC6FBB2435C099004B858F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 77FC6FB72435C099004B858F /* LYGraffiti.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 77FC6F8A2435AACD004B858F;
-			remoteInfo = LYGraffiti;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		77FC6FC42435C985004B858F /* Embed Frameworks */ = {
@@ -35,7 +24,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				77FC6FC32435C984004B858F /* LYGraffiti.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7779DA82264A843D0034E11E /* LYGraffiti */ = {isa = PBXFileReference; lastKnownFileType = folder; name = LYGraffiti; path = ../../Downloads/LYGraffiti; sourceTree = "<group>"; };
 		77FC6F282435A33E004B858F /* LYGraffitiDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYGraffitiDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77FC6F2B2435A33E004B858F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77FC6F2D2435A33E004B858F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +41,6 @@
 		77FC6F372435A33F004B858F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77FC6F392435A33F004B858F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77FC6F7D2435A6F7004B858F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		77FC6FB72435C099004B858F /* LYGraffiti.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LYGraffiti.xcodeproj; path = LYGraffiti/LYGraffiti.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77FC6FC22435C984004B858F /* LYGraffiti.framework in Frameworks */,
+				7779DA84264A84520034E11E /* LYGraffiti in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,7 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				77FC6F7D2435A6F7004B858F /* README.md */,
-				77FC6FB72435C099004B858F /* LYGraffiti.xcodeproj */,
+				7779DA82264A843D0034E11E /* LYGraffiti */,
 				77FC6F2A2435A33E004B858F /* LYGraffitiDemo */,
 				77FC6F292435A33E004B858F /* Products */,
 				77FC6F792435A660004B858F /* Frameworks */,
@@ -107,14 +95,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		77FC6FB82435C099004B858F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				77FC6FBC2435C099004B858F /* LYGraffiti.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,6 +112,9 @@
 			dependencies = (
 			);
 			name = LYGraffitiDemo;
+			packageProductDependencies = (
+				7779DA83264A84520034E11E /* LYGraffiti */,
+			);
 			productName = LYGraffitiDemo;
 			productReference = 77FC6F282435A33E004B858F /* LYGraffitiDemo.app */;
 			productType = "com.apple.product-type.application";
@@ -162,28 +145,12 @@
 			mainGroup = 77FC6F1F2435A33E004B858F;
 			productRefGroup = 77FC6F292435A33E004B858F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 77FC6FB82435C099004B858F /* Products */;
-					ProjectRef = 77FC6FB72435C099004B858F /* LYGraffiti.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				77FC6F272435A33E004B858F /* LYGraffitiDemo */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		77FC6FBC2435C099004B858F /* LYGraffiti.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = LYGraffiti.framework;
-			remoteRef = 77FC6FBB2435C099004B858F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		77FC6F262435A33E004B858F /* Resources */ = {
@@ -404,6 +371,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7779DA83264A84520034E11E /* LYGraffiti */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LYGraffiti;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77FC6F202435A33E004B858F /* Project object */;
 }
